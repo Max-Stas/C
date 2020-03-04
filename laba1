@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int bitsOn(int num) {
+unsigned int unum = (unsigned int)num;
+int nb = 0;
+while (unum) {
+nb += unum & 1;
+unum >>= 1;
+}
+return nb;
+}
+
+void Void(int a, int b) {
+int bits, max_bits = 0, max_num = 0;
+    for (int i = a; i <= b; i++) {
+bits = bitsOn(i);
+if (bits >= max_bits) {
+max_bits = bits;
+max_num = i;
+}
+}
+    printf ("%s%d%s%d%s", "Максимальное количество установленных бит ", max_bits, " в числе ", max_num, "\n");
+}
+int main() {
+    int a, b;
+    printf ("vvedite a: ");
+    scanf ("%d", &a);
+    printf ("vvedite b: ");
+    scanf ("%d", &b);
+    Void (a, b);
+}
