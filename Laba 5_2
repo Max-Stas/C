@@ -31,7 +31,7 @@ int main()
     fopen (&myfile, "read.txt", "r");
     if (myfile == NULL)
     {
-        printf("‘айл не найден");
+        printf("файл не найден");
         return -1;
     }
     int i = 0;
@@ -65,7 +65,7 @@ Node * AddToTree(Node *Tree, char *word)
         Tree = (Node*)malloc(sizeof(Node));
         if (Tree == NULL)
         {
-            printf("ќшибка");
+            printf("ошибка");
             exit(1);
         }
         strncpy(Tree->data, word, 50);
